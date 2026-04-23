@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import navbar from "./componenets/Navbar";
+import footer from "./components/footer";
+import home from "./pages/home";
+import about from "./pages/about";
+import projects from "./pages/projects";
+import contact from "./pages/contact";
 
-export default function App() {
+function ScrollToHash() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+  
+  return null;
+}
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Router>
+      <ScrollToHash />
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<home />} />
+        <Route path="/about" element={<about />} />
+        <Route path="/projects" element={<projects />} />
+        <Route path="/contact" element={<contact />} />
+      </Routes>
+
+      <Footer />
+    </Router>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
