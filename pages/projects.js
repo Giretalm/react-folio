@@ -21,7 +21,7 @@ export default function Projects() {
         description="A movie review CMS that allows users with proper access level to 
         either add or manage reviews."
         tech="PHP and MySQL"
-        link="https://students.gaim.ucf.edu/~gi497540/dig3134c/assignments/assignment04/login.php"
+        github="https://students.gaim.ucf.edu/~gi497540/dig3134c/assignments/assignment04/login.php"
         demo="#"
       />
     

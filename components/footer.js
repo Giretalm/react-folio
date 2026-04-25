@@ -1,7 +1,17 @@
+import { View, Text, StyleSheet } from "react-native";
+
 export default function Footer() {
   return (
-    <footer className="footer">
-      <p>© 2026 My Portfolio</p>
-    </footer>
+    <View style={styles.footer}>
+      <Text>© 2026 My Portfolio</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  footer: {
+    padding: 10,
+    alignItems: "center",
+    backgroundColor: "#ddd",
+  },
+});

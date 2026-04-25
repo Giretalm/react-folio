@@ -1,31 +1,16 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import{BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
-function ScrollToHash() {
-  const { hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [hash]);
-  
-  return null;
-}
-
-function App() {
+export default function App() {
   return (
     <Router>
-      <ScrollToHash />
       <Navbar />
 
       <Routes>
@@ -39,5 +24,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
