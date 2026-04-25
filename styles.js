@@ -77,5 +77,17 @@ export default StyleSheet.create({
   marginTop: 10,
   fontWeight: "bold",
   textDecorationLine: "underline",
+  },
+  
+  background: {
+  flex: 1,
+  justifyContent: "center",
+  padding: 20,
+},
+
+overlay: {
+  backgroundColor: "rgba(0,0,0,0.6)",
+  padding: 20,
+  borderRadius: 10,
 },
 });
