@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import navbar from "./componenets/Navbar";
-import footer from "./components/footer";
-import home from "./pages/home";
-import about from "./pages/about";
-import projects from "./pages/projects";
-import contact from "./pages/contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -29,10 +29,10 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<home />} />
-        <Route path="/about" element={<about />} />
-        <Route path="/projects" element={<projects />} />
-        <Route path="/contact" element={<contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <Footer />
