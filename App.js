@@ -1,26 +1,29 @@
-import{BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { useState } from "react";
+import { View } from "react-native";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import Home from "./screens/Home";
+import About from "./screens/About";
+import Projects from "./screens/Projects";
+import Contact from "./screens/Contact";
+
+import styles from "./styles";
 
 export default function App() {
-  return (
-    <Router>
-      <Navbar />
+  const [page, setPage] = useState("home");
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+  return (
+    <View style={styles.container}>
+      <Navbar setPage={setPage} />
+
+      {page === "home" && <Home />}
+      {page === "about" && <About />}
+      {page === "projects" && <Projects />}
+      {page === "contact" && <Contact />}
 
       <Footer />
-    </Router>
+    </View>
   );
 }

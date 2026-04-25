@@ -1,23 +1,15 @@
-export default function ProjectCard({ title, description, tech, github, demo }) {
+import { View, Text, TouchableOpacity, Linking } from "react-native";
+import styles from "../styles";
+
+export default function ProjectCard({ title, description, link}) {
   return (
-    <div className="card">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <p><strong>Tech:</strong> {tech}</p>
+    <View style={styles.card}>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.text}>{description}</Text>
 
-      <div className="links">
-        {github && (
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-        )}
-
-        {demo && (
-          <a href={demo} target="_blank" rel="noopener noreferrer">
-            Live Demo
-          </a>
-        )}
-      </div>
-    </div>
+      <TouchableOpacity onPress={() => Linking.openURL(link)}>
+        <Text style={styles.link}>View Project</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
