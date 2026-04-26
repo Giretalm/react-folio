@@ -1,14 +1,4 @@
-import { useState } from "react";
-import { View } from "react-native";
-
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-import Home from "./screens/Home";
-import About from "./screens/About";
-import Projects from "./screens/Projects";
-import Contact from "./screens/Contact";
-
+import { View, Text, ScrollView } from "react-native";
 import styles from "./styles";
 
 export default function App() {
