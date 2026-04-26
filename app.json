@@ -8,7 +8,7 @@
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "experiments": {
-      "baseurl": "/expo-react-folio"
+      "baseurl": "/expo-react-folio/"
     },
     "splash": {
       "image": "./assets/splash-icon.png",
